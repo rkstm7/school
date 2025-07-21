@@ -1,26 +1,29 @@
 import os
 from pathlib import Path
-import dj_database_url  # For PostgreSQL
+import dj_database_url
 from dotenv import load_dotenv
 
-# Load .env file
+# Load environment variables from .env file
 load_dotenv()
 
-# Base directory
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Secret key
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-dev-key')
 
 # Debug mode
-DEBUG = os.environ.get('DEBUG', 'True') == 'True'
+DEBUG = os.environ.get('DEBUG', 'True').lower() == 'true'
 
 # Allowed hosts
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    os.environ.get('RENDER_EXTERNAL_HOSTNAME', 'your-render-app.onrender.com'),
 ]
+
+# Add Render hostname if available
+RENDER_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_HOSTNAME)
 
 # Application definition
 INSTALLED_APPS = [
@@ -30,12 +33,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Your custom apps here
+    # Add your apps here
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # Static file handling
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # For static file serving
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -64,7 +67,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'school.wsgi.application'
 
-# ✅ Database Configuration (Use SQLite locally, PostgreSQL in production)
+# Database configuration
 if os.environ.get('DJANGO_DEVELOPMENT') == 'True':
     DATABASES = {
         'default': {
@@ -95,7 +98,7 @@ TIME_ZONE = 'Asia/Kolkata'
 USE_I18N = True
 USE_TZ = True
 
-# Static and Media
+# Static and media files
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
@@ -104,9 +107,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-# Security settings for production
+# Security
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
 
-# Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
