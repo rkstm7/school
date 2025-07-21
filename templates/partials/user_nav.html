@@ -1,0 +1,693 @@
+{% load static %}
+
+<nav
+  id="mainNavbar"
+  class="w-full text-sm font-semibold text-white transition-all duration-300 bg-rose-600"
+>
+  <div
+    id="navContent"
+    class="relative flex items-center justify-end h-full max-w-screen-xl px-4 py-0 mx-auto uppercase gap-x-3"
+  >
+    <!-- Hamburger button - mobile only -->
+    <button
+      id="mobileMenuBtn"
+      aria-label="Toggle Menu"
+      class="block text-white lg:hidden focus:outline-none"
+    >
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M4 6h16M4 12h16M4 18h16"
+        ></path>
+      </svg>
+    </button>
+
+    <!-- Desktop Menu -->
+    <ul
+      id="navMenu"
+      class="items-center justify-end hidden w-full h-full uppercase ml-3.5 lg:flex lg:w-auto whitespace-nowrap"
+    >
+      <!-- Home -->
+      <li class="flex items-center flex-shrink-0 h-full gap-3">
+        <a href="/" class="px-3 py-4 hover:text-[#e9de7c]">HOME</a>
+      </li>
+
+      <!-- About Us -->
+      <li class="relative flex items-center flex-shrink-0 h-full gap-1 group">
+        <button
+          class="flex items-center gap-1 px-3 py-4 hover:text-[#e9de7c] whitespace-nowrap"
+        >
+          ABOUT US
+          <!-- Dropdown arrow icon -->
+          <svg
+            class="w-4 h-4 text-white transition-transform duration-300 group-hover:rotate-180 group-focus:rotate-180"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </button>
+        <ul
+          class="absolute z-10 hidden mt-2 text-sm text-black -translate-x-1/2 bg-white rounded shadow-lg top-full left-1/2 w-52 group-hover:block group-focus-within:block hover:block"
+        >
+          <li>
+            <a href="overview/" class="block px-4 py-2 hover:bg-gray-100"
+              >School Overview</a
+            >
+          </li>
+          <li>
+            <a href="campus/" class="block px-4 py-2 hover:bg-gray-100"
+              >School Campus</a
+            >
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Vision</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+              >Mission & Objectives</a
+            >
+          </li>
+        </ul>
+      </li>
+
+      <!-- Administration -->
+      <li class="relative flex items-center flex-shrink-0 h-full gap-1 group">
+        <button
+          class="flex items-center gap-1 px-3 py-4 hover:text-[#e9de7c] whitespace-nowrap"
+        >
+          ADMINISTRATION
+          <svg
+            class="w-4 h-4 text-white transition-transform duration-300 group-hover:rotate-180 group-focus:rotate-180"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </button>
+        <ul
+          class="absolute z-10 hidden mt-2 text-sm text-black -translate-x-1/2 bg-white rounded shadow-lg top-full left-1/2 w-52 group-hover:block group-focus-within:block hover:block"
+        >
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Headmaster</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Teachers</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+              >Organizational Structure</a
+            >
+          </li>
+        </ul>
+      </li>
+
+      <!-- Academic -->
+      <li class="relative flex items-center flex-shrink-0 h-full gap-1 group">
+        <button
+          class="flex items-center gap-1 px-3 py-4 hover:text-[#e9de7c] whitespace-nowrap"
+        >
+          ACADEMICS
+          <svg
+            class="w-4 h-4 text-white transition-transform duration-300 group-hover:rotate-180 group-focus:rotate-180"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </button>
+        <ul
+          class="absolute z-10 hidden mt-2 text-sm text-black -translate-x-1/2 bg-white rounded shadow-lg top-full left-1/2 w-52 group-hover:block group-focus-within:block hover:block"
+        >
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Class</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Faculty</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">School</a>
+          </li>
+        </ul>
+      </li>
+
+      <!-- Student Support -->
+      <li class="relative flex items-center flex-shrink-0 h-full gap-1 group">
+        <button
+          class="flex items-center gap-1 px-3 py-4 hover:text-[#e9de7c] whitespace-nowrap"
+        >
+          STUDENTS INFO
+          <svg
+            class="w-4 h-4 text-white transition-transform duration-300 group-hover:rotate-180 group-focus:rotate-180"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </button>
+        <ul
+          class="absolute z-10 hidden w-56 mt-2 text-sm text-black -translate-x-1/2 bg-white rounded shadow-lg top-full left-1/2 group-hover:block group-focus-within:block hover:block"
+        >
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Admission</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+              >Examination</a
+            >
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+              >Scholarship's</a
+            >
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+              >Master Time-Table</a
+            >
+          </li>
+        </ul>
+      </li>
+
+      <!-- Programmes -->
+      <li class="flex items-center flex-shrink-0 h-full gap-3">
+        <a href="#" class="px-3 py-4 hover:text-[#e9de7c] whitespace-nowrap"
+          >Programmes</a
+        >
+      </li>
+
+      <!-- Documents -->
+      <li class="flex items-center flex-shrink-0 h-full gap-3">
+        <a href="#" class="px-3 py-4 hover:text-[#e9de7c] whitespace-nowrap"
+          >Documents</a
+        >
+      </li>
+
+      <!-- Contact -->
+      <li class="flex items-center flex-shrink-0 h-full gap-3">
+        <a href="#" class="px-3 py-4 hover:text-[#e9de7c] whitespace-nowrap"
+          >Contact</a
+        >
+      </li>
+
+      <!-- Login -->
+      <li class="relative flex items-center flex-shrink-0 h-full gap-1 group">
+        <button
+          class="flex items-center gap-1 px-3 py-4 hover:text-[#e9de7c] whitespace-nowrap"
+        >
+          LOGIN
+          <svg
+            class="w-4 h-4 text-white transition-transform duration-300 group-hover:rotate-180 group-focus:rotate-180"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </button>
+        <ul
+          class="absolute z-10 hidden mt-2 text-sm text-black -translate-x-1/2 bg-white rounded shadow-lg top-full left-1/2 w-52 group-hover:block group-focus-within:block hover:block"
+        >
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+              >Student Login</a
+            >
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+              >Student Register</a
+            >
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+              >Teacher Login</a
+            >
+          </li>
+          <li>
+            <a href="/admin/" class="block px-4 py-2 hover:bg-gray-100"
+              >Admin Login</a
+            >
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- Mobile Menu -->
+    <ul
+      id="mobileMenu"
+      class="absolute left-0 right-0 z-50 flex-col hidden text-white uppercase top-full bg-rose-600 lg:hidden"
+    >
+      <li>
+        <a
+          href="/"
+          class="block py-3 transition-colors duration-200 hover:bg-rose-700"
+          >HOME</a
+        >
+      </li>
+      <li class="relative group">
+        <button
+          class="flex items-center justify-between w-full px-4 py-3 text-left transition-colors duration-200 hover:bg-rose-700"
+          onclick="toggleSubMenu('mobileAboutSubMenu')"
+          aria-expanded="false"
+          aria-controls="mobileAboutSubMenu"
+        >
+          ABOUT US
+          <svg
+            class="w-4 h-4 ml-2 transition-transform duration-300"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            id="mobileAboutSubMenuIcon"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </button>
+        <ul
+          id="mobileAboutSubMenu"
+          class="flex-col hidden text-white bg-rose-700"
+          aria-hidden="true"
+        >
+          <li>
+            <a
+              href="overview/"
+              class="block px-6 py-2 transition-colors duration-200 hover:bg-rose-600"
+              >School Overview</a
+            >
+          </li>
+          <li>
+            <a
+              href="campus/"
+              class="block px-6 py-2 transition-colors duration-200 hover:bg-rose-600"
+              >School Campus</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-6 py-2 transition-colors duration-200 hover:bg-rose-600"
+              >Vision</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-6 py-2 transition-colors duration-200 hover:bg-rose-600"
+              >Mission & Objectives</a
+            >
+          </li>
+        </ul>
+      </li>
+
+      <li class="relative group">
+        <button
+          class="flex items-center justify-between w-full px-4 py-3 text-left transition-colors duration-200 hover:bg-rose-700"
+          onclick="toggleSubMenu('mobileAdminSubMenu')"
+          aria-expanded="false"
+          aria-controls="mobileAdminSubMenu"
+        >
+          ADMINISTRATION
+          <svg
+            class="w-4 h-4 ml-2 transition-transform duration-300"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            id="mobileAdminSubMenuIcon"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </button>
+        <ul
+          id="mobileAdminSubMenu"
+          class="flex-col hidden text-white bg-rose-700"
+          aria-hidden="true"
+        >
+          <li>
+            <a
+              href="#"
+              class="block px-6 py-2 transition-colors duration-200 hover:bg-rose-600"
+              >Headmaster</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-6 py-2 transition-colors duration-200 hover:bg-rose-600"
+              >Teachers</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-6 py-2 transition-colors duration-200 hover:bg-rose-600"
+              >Organizational Structure</a
+            >
+          </li>
+        </ul>
+      </li>
+
+      <li class="relative group">
+        <button
+          class="flex items-center justify-between w-full px-4 py-3 text-left transition-colors duration-200 hover:bg-rose-700"
+          onclick="toggleSubMenu('mobileAcademicSubMenu')"
+          aria-expanded="false"
+          aria-controls="mobileAcademicSubMenu"
+        >
+          ACADEMICS
+          <svg
+            class="w-4 h-4 ml-2 transition-transform duration-300"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            id="mobileAcademicSubMenuIcon"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </button>
+        <ul
+          id="mobileAcademicSubMenu"
+          class="flex-col hidden text-white bg-rose-700"
+          aria-hidden="true"
+        >
+          <li>
+            <a
+              href="#"
+              class="block px-6 py-2 transition-colors duration-200 hover:bg-rose-600"
+              >Class</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-6 py-2 transition-colors duration-200 hover:bg-rose-600"
+              >Faculty</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-6 py-2 transition-colors duration-200 hover:bg-rose-600"
+              >School</a
+            >
+          </li>
+        </ul>
+      </li>
+
+      <li class="relative group">
+        <button
+          class="flex items-center justify-between w-full px-4 py-3 text-left transition-colors duration-200 hover:bg-rose-700"
+          onclick="toggleSubMenu('mobileStudentsSubMenu')"
+          aria-expanded="false"
+          aria-controls="mobileStudentsSubMenu"
+        >
+          STUDENTS INFO
+          <svg
+            class="w-4 h-4 ml-2 transition-transform duration-300"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            id="mobileStudentsSubMenuIcon"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </button>
+        <ul
+          id="mobileStudentsSubMenu"
+          class="flex-col hidden text-white bg-rose-700"
+          aria-hidden="true"
+        >
+          <li>
+            <a
+              href="#"
+              class="block px-6 py-2 transition-colors duration-200 hover:bg-rose-600"
+              >Admission</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-6 py-2 transition-colors duration-200 hover:bg-rose-600"
+              >Examination</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-6 py-2 transition-colors duration-200 hover:bg-rose-600"
+              >Scholarship's</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-6 py-2 transition-colors duration-200 hover:bg-rose-600"
+              >Master Time-Table</a
+            >
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a
+          href="#"
+          class="block px-4 py-3 transition-colors duration-200 hover:bg-rose-700"
+          >Programmes</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          class="block px-4 py-3 transition-colors duration-200 hover:bg-rose-700"
+          >Documents</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          class="block px-4 py-3 transition-colors duration-200 hover:bg-rose-700"
+          >Contact</a
+        >
+      </li>
+      <li class="relative group">
+        <button
+          class="flex items-center justify-between w-full px-4 py-3 text-left transition-colors duration-200 hover:bg-rose-700"
+          onclick="toggleSubMenu('mobileLoginSubMenu')"
+          aria-expanded="false"
+          aria-controls="mobileLoginSubMenu"
+        >
+          LOGIN
+          <svg
+            class="w-4 h-4 ml-2 transition-transform duration-300"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            id="mobileLoginSubMenuIcon"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </button>
+        <ul
+          id="mobileLoginSubMenu"
+          class="flex-col hidden text-white bg-rose-700"
+          aria-hidden="true"
+        >
+          <li>
+            <a
+              href="#"
+              class="block px-6 py-2 transition-colors duration-200 hover:bg-rose-600"
+              >Student Login</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-6 py-2 transition-colors duration-200 hover:bg-rose-600"
+              >Student Register</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-6 py-2 transition-colors duration-200 hover:bg-rose-600"
+              >Teacher Login</a
+            >
+          </li>
+          <li>
+            <a
+              href="/admin/"
+              class="block px-6 py-2 transition-colors duration-200 hover:bg-rose-600"
+              >Admin Login</a
+            >
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<style>
+  /* Custom slow pulse animation */
+  @keyframes pulse-slow {
+    0%,
+    100% {
+      opacity: 0.7;
+      transform: translateY(0);
+      box-shadow: 0 0 6px 1px rgba(255, 255, 255, 0.7);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px 3px rgba(255, 255, 255, 0.9);
+    }
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+  }
+</style>
+
+<script>
+  const navbar = document.getElementById("mainNavbar");
+  const navContent = document.getElementById("navContent");
+  const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  // Toggle mobile menu open/close
+  mobileMenuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+
+  // Toggle submenus on mobile
+  function toggleSubMenu(id) {
+    const submenu = document.getElementById(id);
+    const icon = document.getElementById(id + "Icon");
+    if (!submenu || !icon) return;
+
+    const isHidden = submenu.classList.contains("hidden");
+
+    if (isHidden) {
+      submenu.classList.remove("hidden");
+      submenu.setAttribute("aria-hidden", "false");
+      icon.classList.add("rotate-180");
+    } else {
+      submenu.classList.add("hidden");
+      submenu.setAttribute("aria-hidden", "true");
+      icon.classList.remove("rotate-180");
+    }
+  }
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 40) {
+      navbar.classList.add(
+        "fixed",
+        "top-4",
+        "left-1/2",
+        "transform",
+        "-translate-x-1/2",
+        "rounded-full",
+        "max-w-screen-xl",
+        "shadow-xl",
+        "z-50",
+        "backdrop-blur-md",
+        "bg-opacity-90"
+      );
+      // Ensure bg-rose-600 always present
+      navbar.classList.add("bg-rose-600");
+
+      navbar.style.height = "56px";
+      navContent.classList.add("justify-center");
+      navContent.classList.remove("justify-end");
+    } else {
+      navbar.classList.remove(
+        "fixed",
+        "top-4",
+        "left-1/2",
+        "transform",
+        "-translate-x-1/2",
+        "rounded-full",
+        "max-w-screen-xl",
+        "shadow-xl",
+        "z-50",
+        "backdrop-blur-md",
+        "bg-opacity-90"
+      );
+      // Ensure bg-rose-600 always present
+      navbar.classList.add("bg-rose-600");
+
+      navbar.style.height = "56px";
+      navContent.classList.add("justify-end");
+      navContent.classList.remove("justify-center");
+    }
+  });
+</script>

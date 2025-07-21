@@ -1,0 +1,228 @@
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+  }
+
+/* Headmaster Section */
+@keyframes fade-in-section {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.animate-fade-in-section {
+  animation: fade-in-section 1s ease-out both;
+}
+
+
+/* Teacher Section */
+  /* 3D tilt effect on hover */
+ .teacher-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    will-change: transform;
+    border-radius: 1.5rem; /* rounded-3xl */
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.4), 0 4px 6px -2px rgba(99, 102, 241, 0.2);
+    background-color: white;
+    cursor: pointer;
+  }
+
+  .teacher-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.6), 0 10px 10px -5px rgba(99, 102, 241, 0.3);
+  }
+
+/* Important Links & Updates */
+/* Inline CSS use Huaa hai */
+
+/* Why Choose Us? */
+  .feature-box {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    will-change: transform;
+  }
+
+  .feature-box:hover {
+    box-shadow: 0 15px 30px rgba(59, 130, 246, 0.5);
+    transform: scale(1.1) rotateX(15deg) rotateY(10deg);
+    z-index: 10;
+  }
+
+/* School Introdunction */
+ /* Tab underline animation */
+  #tabs a.tab-link {
+    position: relative;
+    padding-bottom: 6px;
+  }
+  #tabs a.tab-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #dc2626; /* red-600 */
+    transition: width 0.3s ease;
+  }
+  #tabs a.tab-link:hover::after,
+  #tabs a.tab-link.active::after {
+    width: 100%;
+  }
+
+  /* Content fade & slide animation */
+  #content-box,
+  #content-image {
+    will-change: transform, opacity;
+  }
+
+  /* 3D hover effect on content box and image */
+  #content-box:hover,
+  #content-image:hover {
+    transform: perspective(600px) rotateY(10deg) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+
+  /* Smooth transition for tabs text color */
+  #tabs a.tab-link {
+    transition: color 0.3s ease;
+  }
+
+/* Our Department  */
+    @keyframes spin-slow {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    /* utility‑style class so you can reuse it */
+    .animate-spin-slow {
+      animation: spin-slow 20s linear infinite; /* 20 s per rotation – change as needed */
+    }
+  
+/* School Overview */
+ /* Page fade + scale animations */
+  @keyframes fadeScaleIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes fadeScaleOut {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+  }
+
+  #pageWrapper {
+    animation: fadeScaleIn 0.7s ease forwards;
+    will-change: transform, opacity;
+  }
+
+  #pageWrapper.fade-out {
+    animation: fadeScaleOut 0.5s ease forwards;
+  }
+
+/* base file */
+/* Social Sidebar */
+    #socialSidebar {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      z-index: 50;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(8px);
+      border-radius: 0.5rem 0 0 0.5rem;
+      padding: 0.5rem;
+      /* Always fully visible and clickable */
+      opacity: 1;
+      pointer-events: auto;
+      transition: transform 0.3s ease;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    }
+
+    /* Social Icon styles */
+    #socialSidebar a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      cursor: pointer;
+      border-radius: 0.375rem; /* rounded */
+      transition: transform 0.3s ease;
+    }
+
+    #socialSidebar a:hover {
+      transform: scale(1.2) rotate(6deg);
+    }
+
+    /* Balls styling */
+    #animatedObjectsContainer .ball {
+      position: fixed;
+      border-radius: 50%;
+      opacity: 0.3;
+      will-change: transform;
+      transition: transform 0.3s ease-in-out;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    #animatedObjectsContainer .ball:nth-child(1) {
+      width: 60px;
+      height: 60px;
+      background: radial-gradient(circle, #f43f5e, #be123c);
+      top: 10vh;
+      left: 10vw;
+    }
+    #animatedObjectsContainer .ball:nth-child(2) {
+      width: 50px;
+      height: 50px;
+      background: radial-gradient(circle, #facc15, #f97316);
+      top: 30vh;
+      left: 75vw;
+    }
+    #animatedObjectsContainer .ball:nth-child(3) {
+      width: 40px;
+      height: 40px;
+      background: radial-gradient(circle, #3b82f6, #06b6d4);
+      top: 60vh;
+      left: 20vw;
+    }
+    #animatedObjectsContainer .ball:nth-child(4) {
+      width: 70px;
+      height: 70px;
+      background: radial-gradient(circle, #8b5cf6, #a855f7);
+      top: 75vh;
+      left: 45vw;
+    }
+    #animatedObjectsContainer .ball:nth-child(5) {
+      width: 35px;
+      height: 35px;
+      background: radial-gradient(circle, #22c55e, #84cc16);
+      top: 40vh;
+      left: 60vw;
+    }
+
+    @media (max-width: 640px) {
+      #animatedObjectsContainer .ball {
+        display: none;
+      }
+    }

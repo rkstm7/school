@@ -1,0 +1,142 @@
+{% extends "base.html" %} {% load static %}
+<title>{% block title %}School Campus{% endblock %}</title>
+{% block content %}
+
+<section
+  id="pageWrapper"
+  class="max-w-6xl px-6 py-16 mx-auto my-20 transition-all duration-1000 ease-out translate-y-10 bg-white shadow-2xl opacity-0 rounded-xl"
+>
+  <div
+    class="mb-8 text-center transition-transform duration-700 hover:scale-105"
+  >
+    <h2 class="text-4xl font-black leading-tight text-gray-800 drop-shadow-md">
+      SCHOOL <span class="text-rose-600">CAMPUS DETAILS</span>
+    </h2>
+  </div>
+
+  {% comment "Section: School" %}
+  <div class="flex flex-col items-center gap-10 mb-16 md:flex-row">
+    <div class="md:w-1/2">
+      <img
+        src="{% static 'images/school.jpg' %}"
+        alt="School"
+        class="w-full rounded-lg shadow-lg"
+      />
+    </div>
+    <div class="md:w-1/2">
+      <h3 class="mb-4 text-3xl font-bold text-rose-700">School</h3>
+      <p class="text-lg leading-relaxed text-gray-700">
+        P.S. HARI MUSHARI TOL NEW is a rural co-educational school offering
+        Grades 1 to 5 with a strong emphasis on inclusive education. The medium
+        of instruction is Hindi, and it follows an academic session starting in
+        April.
+      </p>
+    </div>
+  </div>
+
+  {% comment %} {% comment "Section: Campus" %} {% endcomment %}
+  <div class="flex flex-col items-center gap-10 mb-16 md:flex-row-reverse">
+    <div class="md:w-1/2">
+      <img
+        src="{% static 'images/campus.jpg' %}"
+        alt="Campus"
+        class="w-full rounded-lg shadow-lg"
+      />
+    </div>
+    <div class="md:w-1/2">
+      <h3 class="mb-4 text-3xl font-bold text-rose-700">Campus</h3>
+      <p class="text-lg leading-relaxed text-gray-700">
+        The school campus consists of 8 functional classrooms, 2 non-teaching
+        rooms, and a dedicated Headmaster room. Though the boundary wall is
+        partially broken, the infrastructure is solid and maintained.
+      </p>
+    </div>
+  </div>
+
+  {% comment %} {% comment "Section: Playing Tools" %} {% endcomment %}
+  <div class="flex flex-col items-center gap-10 mb-16 md:flex-row">
+    <div class="md:w-1/2">
+      <img
+        src="{% static 'images/playing_tools.jpg' %}"
+        alt="Playing Tools"
+        class="w-full rounded-lg shadow-lg"
+      />
+    </div>
+    <div class="md:w-1/2">
+      <h3 class="mb-4 text-3xl font-bold text-rose-700">Playing Tools</h3>
+      <p class="text-lg leading-relaxed text-gray-700">
+        Outdoor physical activity is encouraged through well-equipped and safe
+        playing tools. The school playground provides opportunities for both
+        sports and recreation.
+      </p>
+    </div>
+  </div>
+
+  {% comment %} {% comment "Section: Students" %} {% endcomment %}
+  <div class="flex flex-col items-center gap-10 mb-16 md:flex-row-reverse">
+    <div class="md:w-1/2">
+      <img
+        src="{% static 'images/students.jpg' %}"
+        alt="Students"
+        class="w-full rounded-lg shadow-lg"
+      />
+    </div>
+    <div class="md:w-1/2">
+      <h3 class="mb-4 text-3xl font-bold text-rose-700">Students</h3>
+      <p class="text-lg leading-relaxed text-gray-700">
+        Students are the heart of the institution. They enjoy a nurturing
+        environment that promotes not just academics, but also character
+        development and creativity.
+      </p>
+    </div>
+  </div>
+
+  {% comment %} {% comment "Section: Teacher" %} {% endcomment %}
+  <div class="flex flex-col items-center gap-10 mb-16 md:flex-row">
+    <div class="md:w-1/2">
+      <img
+        src="{% static 'images/teachers.jpg' %}"
+        alt="Teachers"
+        class="w-full rounded-lg shadow-lg"
+      />
+    </div>
+    <div class="md:w-1/2">
+      <h3 class="mb-4 text-3xl font-bold text-rose-700">Teachers</h3>
+      <p class="text-lg leading-relaxed text-gray-700">
+        Our qualified and dedicated teachers guide students with care and
+        professionalism. Their experience and passion shape the school's
+        academic reputation.
+      </p>
+    </div>
+  </div>
+
+  {% comment %} {% comment "Section: School Structure" %} {% endcomment %}
+  <div class="flex flex-col items-center gap-10 md:flex-row-reverse">
+    <div class="md:w-1/2">
+      <img
+        src="{% static 'images/school_structure.jpg' %}"
+        alt="School Structure"
+        class="w-full rounded-lg shadow-lg"
+      />
+    </div>
+    <div class="md:w-1/2">
+      <h3 class="mb-4 text-3xl font-bold text-rose-700">School Structure</h3>
+      <p class="text-lg leading-relaxed text-gray-700">
+        The organizational structure ensures efficient management of academics
+        and administration, promoting discipline and performance across all
+        classes.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- JS Animation -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const page = document.getElementById("pageWrapper");
+    page.classList.remove("opacity-0", "translate-y-10");
+    page.classList.add("opacity-100", "translate-y-0");
+  });
+</script>
+
+{% endblock %}

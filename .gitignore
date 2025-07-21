@@ -1,0 +1,33 @@
+# =====================
+# Python / Django
+# =====================
+*.py[cod]
+__pycache__/
+*.log
+*.sqlite3
+db.sqlite3
+.env
+
+# =====================
+# Virtual Environments
+# =====================
+.venv/
+env/
+venv/
+
+# =====================
+# Node / Tailwind
+# =====================
+node_modules/
+
+# =====================
+# Django Static and Media
+# =====================
+staticfiles/         # Collected static files (via collectstatic)
+media/               # User uploaded files
+
+# =====================
+# OS / Editor / Misc
+# =====================
+.DS_Store
+Thumbs.db

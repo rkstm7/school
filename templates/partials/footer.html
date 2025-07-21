@@ -1,0 +1,166 @@
+{% load static %}
+<footer class="relative mb-0 overflow-hidden bg-white">
+  <!-- Top Footer Section with Background -->
+  <div
+    class="relative bg-center bg-no-repeat bg-cover"
+    style="background-image: url('{% static 'images/bg_footer.jpg' %}')"
+  >
+    <!-- Image Overlay -->
+    <div
+      aria-hidden="true"
+      class="absolute inset-0 z-0 bg-center bg-cover opacity-40"
+      style="background-image: url('{% static 'images/bg_footer.jpg' %}')"
+    ></div>
+
+    <!-- White overlay on top -->
+    <div
+      aria-hidden="true"
+      class="absolute inset-0 z-0 bg-white opacity-20"
+    ></div>
+
+    <!-- Content Wrapper -->
+    <div class="relative z-10 max-w-screen-xl px-6 py-16 mx-auto">
+      <div class="flex flex-wrap justify-center gap-10">
+        <!-- Logo + About -->
+        <div
+          class="relative mt-0 flex-1 min-w-[250px] max-w-[320px] transform transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-2xl hover:rotate-[0.5deg] bg-white/60 backdrop-blur-md rounded-2xl p-4"
+        >
+          <img
+            src="{% static 'images/final_logo.png' %}"
+            alt="School Logo"
+            class="h-auto mb-4 transition-transform duration-700 w-80 hover:scale-105"
+          />
+          <p
+            class="text-sm leading-6 text-justify text-black delay-200 animate-fade-in-down"
+          >
+            At Primary School Hari Mushar Tol, we strive for excellence by
+            fostering top-tier education and proudly upholding a legacy of
+            outstanding academic achievement.
+          </p>
+        </div>
+
+        <!-- Feedback -->
+        <div class="flex-1 min-w-[180px] max-w-[220px]">
+          <h2 class="mb-4 text-lg font-bold text-blue-900">FEEDBACK:</h2>
+          <ul class="space-y-2 text-sm text-black">
+            <li>
+              <a
+                href="#"
+                class="inline-block transition-all duration-300 hover:text-red-600 hover:scale-105"
+                >Student Feedback</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="inline-block transition-all duration-300 hover:text-red-600 hover:scale-105"
+                >Teacher Feedback</a
+              >
+            </li>
+            <li>
+              <h2 class="mt-2 text-lg font-bold text-blue-900">SERVICES:</h2>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="inline-block transition-all duration-300 hover:text-red-600 hover:scale-105"
+                >Online Registration</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="inline-block transition-all duration-300 hover:text-red-600 hover:scale-105"
+                >Offline Registration</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Important Links -->
+        <div class="flex-1 min-w-[180px] max-w-[220px]">
+          <h2 class="mb-4 text-lg font-bold text-blue-900">IMPORTANT LINKS:</h2>
+          <ul class="space-y-2 text-sm text-black">
+            <li>
+              <a
+                href="#"
+                class="inline-block transition-all duration-300 hover:text-red-600 hover:scale-105"
+                >PS Hari Mushar Tol</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="inline-block transition-all duration-300 hover:text-red-600 hover:scale-105"
+                >E-SHIKSHAKOSH</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="inline-block transition-all duration-300 hover:text-red-600 hover:scale-105"
+                >U-DISE</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="inline-block transition-all duration-300 hover:text-red-600 hover:scale-105"
+                >Education Department</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div
+          class="flex-1 min-w-[250px] max-w-[320px] transition-all duration-300"
+        >
+          <h2 class="mb-4 text-lg font-bold text-blue-900">CONTACTS:</h2>
+
+          <p class="mb-2 text-sm text-black">
+            <strong>Email:</strong>
+            <a
+              href="mailto:psharimushartol@gmail.com"
+              class="inline-block transition-all duration-300 hover:text-red-600 hover:scale-105"
+            >
+              psharimushartol@gmail.com
+            </a>
+          </p>
+
+          <p class="mb-2 text-sm text-black">
+            <strong>Contact:</strong>
+            <a
+              href="tel:+919934264994"
+              class="inline-block transition-all duration-300 hover:text-red-600 hover:scale-105"
+            >
+              +91 9934264994
+            </a>
+          </p>
+
+          <p class="text-sm text-justify text-black">
+            <strong>Address:</strong>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=P.S.+HARI+MUSHAR+TOL,+LOKHAR+CHOWK,+BHUTHI,+SITAMARHI,+843317"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block transition-all duration-300 hover:text-red-600 hover:scale-105"
+            >
+              P.S. HARI MUSHAR TOL, LOKHAR CHOWK, BHUTHI, SITAMARHI,<br />
+              Pin Code - 843317 (Bihar)
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer bottom bar -->
+  <div
+    class="relative z-20 py-3 mt-0 text-sm font-medium text-center text-white bg-rose-600"
+  >
+    © 2025 Designed By
+    <span class="font-bold text-white">Rohit Singh (RoTech Technology)</span> —
+    All Rights Reserved.
+  </div>
+</footer>

@@ -1,0 +1,114 @@
+{% load static %}
+
+<!-- Topbar -->
+<div class="text-sm font-semibold text-white bg-rose-700">
+  <div
+    class="flex flex-col items-start justify-between px-4 py-2 mx-auto space-y-2 md:flex-row md:items-center md:space-y-0 md:py-3 max-w-7xl"
+  >
+    <!-- Left: Contact Info -->
+    <div class="flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-8">
+      <!-- Phone -->
+      <div class="flex items-center space-x-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-5 h-5 text-white"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3 5h2l3.6 7.59-1.35 2.45a11.036 11.036 0 005.11 5.11l2.45-1.35L19 19v2a2 2 0 01-2 2c-9.39 0-17-7.61-17-17a2 2 0 012-2z"
+          />
+        </svg>
+        <span>
+          Only for tech support:
+          <a
+            href="tel:+919934264994"
+            class="ml-1 font-bold text-white transition-colors duration-300 hover:text-yellow-300"
+          >
+            +91 99342 64994
+          </a>
+        </span>
+      </div>
+
+      <!-- Email -->
+      <div class="flex items-center space-x-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-5 h-5 text-white"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M16 12H8m8 0a8 8 0 11-16 0 8 8 0 0116 0z"
+          />
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M16 12l-4 4m0-8l4 4"
+          />
+        </svg>
+        <span>
+          Email:
+          <a
+            href="mailto:psharimushartol@gmail.com"
+            class="ml-1 font-bold text-white transition-colors duration-300 hover:text-yellow-300"
+          >
+            psharimushartol@gmail.com
+          </a>
+        </span>
+      </div>
+    </div>
+
+    <!-- Right: Links -->
+    <div class="flex items-center pt-2 space-x-4 md:pt-0">
+      <a
+        href="#"
+        class="px-3 py-1 transition-colors duration-300 hover:text-yellow-300 focus:outline-none focus:text-yellow-300"
+      >
+        HELP DESK
+      </a>
+
+      <!-- Vertical Separator (Hidden on small screens) -->
+      <div
+        class="hidden h-6 w-[3px] bg-gradient-to-b from-white/70 via-white/90 to-white/70 rounded-lg animate-pulse-slow md:block"
+        aria-hidden="true"
+      ></div>
+
+      <a
+        href="#"
+        class="px-3 py-1 transition-colors duration-300 hover:text-yellow-300 focus:outline-none focus:text-yellow-300"
+      >
+        Admin Login
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Custom Animation -->
+<style>
+  @keyframes pulse-slow {
+    0%,
+    100% {
+      opacity: 0.7;
+      transform: translateY(0);
+      box-shadow: 0 0 6px 1px rgba(255, 255, 255, 0.7);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px 3px rgba(255, 255, 255, 0.9);
+    }
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+  }
+</style>

@@ -1,0 +1,651 @@
+{% extends "base.html" %} {% load static %} {% block title %}Home{% endblock %}
+{% block content %}
+
+<!-- Carousel Photo Effect Section - Full Width  -->
+<div class="relative w-full overflow-hidden h-[650px]">
+  <div
+    id="carousel"
+    class="flex w-full h-full transition-transform duration-700 ease-in-out"
+  >
+    <img
+      src="{% static 'images/banner1.jpg' %}"
+      class="flex-shrink-0 object-cover w-full h-[650px]"
+    />
+    <img
+      src="{% static 'images/banner2.jpg' %}"
+      class="flex-shrink-0 object-cover w-full h-[650px]"
+    />
+    <img
+      src="{% static 'images/banner3.jpg' %}"
+      class="flex-shrink-0 object-cover w-full h-[650px]"
+    />
+  </div>
+  <button
+    onclick="prevSlide()"
+    class="absolute p-2 -translate-y-1/2 bg-white rounded-full shadow-md top-1/2 left-4 hover:bg-gray-200"
+  >
+    &#10094;
+  </button>
+  <button
+    onclick="nextSlide()"
+    class="absolute p-2 -translate-y-1/2 bg-white rounded-full shadow-md top-1/2 right-4 hover:bg-gray-200"
+  >
+    &#10095;
+  </button>
+</div>
+
+<!-- Headmaster Section -->
+<div class="px-4 mx-auto mt-10 max-w-7xl animate-fade-in-section">
+  <!-- Section Heading -->
+  <div
+    class="mb-8 transition-transform duration-700 text-start hover:scale-105"
+  >
+    <h2
+      class="text-4xl font-black leading-tight text-gray-800 md:text-4xl drop-shadow-md"
+    >
+      Headmaster <span class="text-rose-600">Info</span>
+    </h2>
+  </div>
+
+  <!-- Flex Container -->
+  <div
+    id="principalSection"
+    class="flex flex-col items-center justify-center gap-10 p-10 bg-gradient-to-br from-gray-50 via-white to-gray-100 rounded-3xl md:flex-row transform-gpu transition-all duration-700 hover:scale-[1.01] hover:shadow-2xl"
+  >
+    <!-- Left: Headmaster Card -->
+    <div
+      class="w-full md:w-[600px] p-12 text-center flex flex-col justify-center transform-gpu transition-transform duration-700 hover:scale-105"
+    >
+      <img
+        src="{% static 'images/sir.png' %}"
+        alt="MR. VINOD KUMAR SINGH"
+        class="object-cover mx-auto transition-transform duration-700 rounded-md shadow-md pointer-events-none select-none w-60 h-80 hover:scale-110"
+        draggable="false"
+        oncontextmenu="return false"
+      />
+
+      <p
+        class="mt-4 text-lg font-bold tracking-wide text-rose-700 drop-shadow-sm"
+      >
+        MR. VINOD KUMAR SINGH
+      </p>
+      <p class="mt-1 text-sm font-semibold leading-snug text-blue-900">
+        Hon'ble Headmaster<br />
+        PRIMARY SCHOOL HARI MUSHAR TOL
+      </p>
+    </div>
+
+    <!-- Right: Headmaster Message -->
+    <div
+      class="w-full md:w-[600px] p-6 transform-gpu transition-transform duration-700 hover:scale-105"
+    >
+      <h3 class="text-2xl font-bold text-orange-600 text-start drop-shadow">
+        Headmaster Message
+      </h3>
+      <p
+        class="mt-4 font-serif text-base leading-relaxed tracking-wide text-justify text-gray-700 max-h-[800px] overflow-y-auto scrollbar-thin scrollbar-thumb-rose-400 scrollbar-track-gray-100"
+      >
+        "शिक्षा ही जीवन का मूल आधार है।" <br /><br />
+
+        प्रिय अभिभावकों, छात्रों और शुभचिंतकों,<br /><br />
+
+        मैं अत्यंत गर्व और हर्ष के साथ आप सभी का PRIMARY SCHOOL HARI MUSHAR TOL,
+        BATHNAHA, SITAMARHI, BIHAR में स्वागत करता हूँ। हमारा विद्यालय न केवल
+        शैक्षणिक उत्कृष्टता की दिशा में प्रयासरत है, बल्कि बच्चों के सर्वांगीण
+        विकास हेतु एक सकारात्मक, सुरक्षित और प्रेरणादायक वातावरण प्रदान करने के
+        लिए समर्पित है। <br /><br />
+
+        हमारा उद्देश्य विद्यार्थियों को ज्ञान के साथ-साथ संस्कार, अनुशासन और
+        नैतिक मूल्यों से युक्त करना है ताकि वे आने वाले समय में एक जिम्मेदार
+        नागरिक बन सकें। शिक्षकगण पूरी निष्ठा और लगन से बच्चों की शिक्षा में
+        योगदान दे रहे हैं।<br /><br />
+
+        मैं सभी अभिभावकों से अनुरोध करता हूँ कि वे विद्यालय के साथ सहयोग बनाए
+        रखें और बच्चों को शिक्षित और सशक्त बनाने के इस मिशन में भागीदार बनें।<br /><br />
+
+        हमारा विश्वास है कि यदि विद्यालय, शिक्षक, अभिभावक और छात्र मिलकर कार्य
+        करें, तो हम हर बच्चे के भविष्य को उज्जवल बना सकते हैं।<br /><br />
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Teachers Section -->
+<div class="px-6 pt-16 mx-auto max-w-7xl">
+  <div class="mb-10 text-start">
+    <h2
+      class="text-4xl font-black leading-tight text-gray-800 transition-transform duration-700 md:text-4xl drop-shadow-md hover:scale-105"
+    >
+      Meet Our <span class="text-rose-600">Dedicated Teachers</span>
+    </h2>
+    <p class="max-w-xl mt-3 tracking-wide text-left text-gray-700">
+      Our passionate educators are committed to shaping the future...
+    </p>
+  </div>
+  <div class="grid grid-cols-1 gap-10 md:grid-cols-2">
+    <div
+      class="flex flex-col items-center p-8 text-center transition-transform duration-300 shadow-lg teacher-card rounded-3xl"
+      onmousemove="handleTilt(event, this)"
+      onmouseleave="resetTilt(this)"
+    >
+      <img
+        src="{% static 'images/demo3.png' %}"
+        alt="Teacher 1"
+        class="object-cover mb-6 border-4 border-indigo-500 rounded-full shadow-lg w-44 h-44"
+        draggable="false"
+        oncontextmenu="return false;"
+      />
+      <h3 class="text-2xl font-bold tracking-tight text-gray-900">
+        SAJADA PRAVEEN
+      </h3>
+      <p class="mt-2 font-semibold tracking-wide text-indigo-600 uppercase">
+        Assistant Teacher
+      </p>
+    </div>
+
+    <div
+      class="flex flex-col items-center p-8 text-center transition-transform duration-300 shadow-lg teacher-card rounded-3xl"
+      onmousemove="handleTilt(event, this)"
+      onmouseleave="resetTilt(this)"
+    >
+      <img
+        src="{% static 'images/demo4.png' %}"
+        alt="Teacher 2"
+        class="object-cover mb-6 border-4 border-indigo-500 rounded-full shadow-lg w-44 h-44"
+        draggable="false"
+        oncontextmenu="return false;"
+      />
+      <h3 class="text-2xl font-bold tracking-tight text-gray-900">
+        KUMARI INDU
+      </h3>
+      <p class="mt-2 font-semibold tracking-wide text-indigo-600 uppercase">
+        Assistant Teacher
+      </p>
+    </div>
+  </div>
+</div>
+
+<hr class="mt-16 border-t-4 border-gray-300" />
+
+<!-- Heading -->
+<div class="px-4 pt-16 mx-auto max-w-7xl">
+  <div class="mb-8 text-start">
+    <h2
+      class="text-4xl font-black leading-tight text-gray-800 transition-transform duration-700 md:text-4xl drop-shadow-md hover:scale-105"
+    >
+      Important Links <span class="text-rose-600">& Academic Updates</span>
+    </h2>
+  </div>
+</div>
+
+<!-- Use flex and justify-center to center the entire row -->
+<div class="flex flex-wrap justify-center gap-8 px-4 py-6 mx-auto max-w-7xl">
+  <!-- Important Links Panel (keep moderate width) -->
+  <div class="flex flex-col gap-4 w-72">
+    <div
+      class="py-3 font-bold text-center text-white rounded-lg shadow-lg select-none bg-gradient-to-r from-blue-900 via-indigo-900 to-blue-800"
+    >
+      ALL IMPORTANT LINKS
+    </div>
+
+    <button
+      class="text-yellow-900 bg-yellow-400 shadow-lg btn-tile hover:bg-yellow-500"
+      type="button"
+    >
+      PS HARI MUSHAR TOL, BATHANAHA
+    </button>
+    <button
+      class="shadow-lg btn-tile bg-cyan-400 hover:bg-cyan-500 text-cyan-900"
+      type="button"
+    >
+      BIHAR GOVERNMENT
+    </button>
+    <button
+      class="text-white bg-gray-600 shadow-lg btn-tile hover:bg-gray-700"
+      type="button"
+    >
+      STUDY MATERIAL
+    </button>
+    <button
+      class="text-white bg-red-600 shadow-lg btn-tile hover:bg-red-700"
+      type="button"
+    >
+      SCHOLARSHIPS
+    </button>
+    <button
+      class="text-white bg-blue-700 shadow-lg btn-tile hover:bg-blue-800"
+      type="button"
+    >
+      About School
+    </button>
+    <button
+      class="text-yellow-900 bg-yellow-400 shadow-lg btn-tile hover:bg-yellow-500"
+      type="button"
+    >
+      Admission
+    </button>
+  </div>
+
+  <!-- School News Panel (wider) -->
+  <div class="bg-white border border-gray-200 rounded-lg shadow-lg w-96">
+    <div
+      class="py-3 font-bold text-center text-white rounded-t-lg select-none bg-gradient-to-r from-blue-900 via-indigo-900 to-blue-800"
+    >
+      SCHOOL NEWS
+    </div>
+    <div
+      class="relative h-40 overflow-hidden scroll-container"
+      id="ugContainer"
+    >
+      <ul
+        id="ugTicker"
+        class="space-y-6 font-semibold ticker-list text-rose-600"
+      >
+        <li>→ Apply For Admission</li>
+        <li>→ Apply For TC</li>
+        <li>→ Student Register/Login</li>
+        <li>→ Apply For Enquiry</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Government News Panel (wider) -->
+  <div class="bg-white border border-gray-200 rounded-lg shadow-lg w-96">
+    <div
+      class="py-3 font-bold text-center text-white rounded-t-lg select-none bg-gradient-to-r from-blue-900 via-indigo-900 to-blue-800"
+    >
+      GOVERNMENT NEWS
+    </div>
+    <div
+      class="relative h-40 overflow-hidden scroll-container"
+      id="pgContainer"
+    >
+      <ul
+        id="pgTicker"
+        class="space-y-6 font-semibold ticker-list text-rose-600"
+      >
+        <li>→ Join School WhatsApp Group</li>
+        <li>→ Help & Support</li>
+        <li>→ Government Provide Scholarships For Students</li>
+        <li>→ Admission Deadline Date - 31 July 2025</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<style>
+  .scroll-container {
+    position: relative;
+    height: 10rem; /* ~40 in Tailwind */
+    overflow: hidden;
+  }
+
+  .ticker-list {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    will-change: transform;
+  }
+
+  .btn-tile {
+    @apply rounded-md font-semibold py-3 px-4 text-center shadow-md transition duration-300 ease-in-out transform;
+  }
+
+  .btn-tile:hover {
+    transform: scale(1.05) rotateX(2deg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+</style>
+
+<!-- Why Choose Us Section -->
+<section class="py-16 bg-white">
+  <div class="max-w-6xl px-4 mx-auto">
+    <!-- Heading and Paragraph -->
+    <div class="mb-10 text-center">
+      <h2
+        class="text-4xl font-black leading-tight text-gray-800 transition-transform duration-700 drop-shadow-md md:text-4xl hover:scale-105 hover:rotateX-3"
+        style="transform-style: preserve-3d"
+      >
+        Why <span class="text-rose-600">Choose Us?</span>
+      </h2>
+      <p class="max-w-xl mx-auto mt-4 text-base text-center text-gray-600">
+        We provide a dynamic academic environment with modern facilities and
+        student-focused learning.
+      </p>
+    </div>
+
+    <!-- Feature Boxes -->
+    <div
+      id="featureBoxes"
+      class="grid grid-cols-2 gap-6 text-center sm:grid-cols-3 md:grid-cols-5"
+    >
+      <div
+        class="p-6 text-gray-800 bg-white border shadow-md cursor-pointer feature-box rounded-xl"
+        style="transform-style: preserve-3d"
+      >
+        <img
+          src="{% static 'images/course_offer.svg' %}"
+          alt="Course Offered"
+          class="w-16 h-16 mx-auto mb-3"
+        />
+        <p class="text-lg font-semibold text-gray-800">Course Offered</p>
+      </div>
+
+      <div
+        class="p-6 text-gray-800 bg-white border shadow-md cursor-pointer feature-box rounded-xl"
+        style="transform-style: preserve-3d"
+      >
+        <img
+          src="{% static 'images/smart_class.svg' %}"
+          alt="Smart Class"
+          class="w-16 h-16 mx-auto mb-3"
+        />
+        <p class="text-lg font-semibold text-gray-800">Smart Class</p>
+      </div>
+
+      <div
+        class="p-6 text-lg text-gray-800 bg-white border shadow-md cursor-pointer feature-box rounded-xl"
+        style="transform-style: preserve-3d"
+      >
+        <img
+          src="{% static 'images/library.svg' %}"
+          alt="Library"
+          class="w-16 h-16 mx-auto mb-3"
+        />
+        <p class="text-lg font-semibold text-gray-800">Library</p>
+      </div>
+
+      <div
+        class="p-6 text-gray-800 bg-white border shadow-md cursor-pointer feature-box rounded-xl"
+        style="transform-style: preserve-3d"
+      >
+        <img
+          src="{% static 'images/faculty.svg' %}"
+          alt="Faculty"
+          class="w-16 h-16 mx-auto mb-3"
+        />
+        <p class="text-lg font-semibold text-gray-800">Faculty</p>
+      </div>
+
+      <div
+        class="p-6 text-gray-800 bg-white border shadow-md cursor-pointer feature-box rounded-xl"
+        style="transform-style: preserve-3d"
+      >
+        <img
+          src="{% static 'images/students.svg' %}"
+          alt="Students"
+          class="w-16 h-16 mx-auto mb-3"
+        />
+        <p class="text-lg font-semibold text-gray-800">Students</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="mt-16">
+  <div class="bg-[#002a53] min-h-screen p-10 font-sans text-white shadow-lg">
+    <!-- Heading -->
+    <h1
+      class="text-4xl font-bold text-center mb-7"
+      style="text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7)"
+    >
+      School <span class="text-red-600">Introduction</span>
+    </h1>
+
+    <!-- Tabs -->
+    <nav
+      class="flex justify-center mb-6 space-x-6 text-xl font-semibold select-none"
+      id="tabs"
+    >
+      <a
+        href="#"
+        id="tab-about"
+        class="relative pb-1 text-red-600 border-b-2 border-red-600 cursor-pointer tab-link active"
+        >About School</a
+      >
+      <span class="text-white">|</span>
+      <a
+        href="#"
+        id="tab-mission"
+        class="relative transition-colors duration-300 cursor-pointer hover:text-red-600 tab-link"
+        >Our Mission</a
+      >
+      <span class="text-white">|</span>
+      <a
+        href="#"
+        id="tab-vision"
+        class="relative transition-colors duration-300 cursor-pointer hover:text-red-600 tab-link"
+        >Our Vision</a
+      >
+      <span class="text-white">|</span>
+      <a
+        href="#"
+        id="tab-values"
+        class="relative transition-colors duration-300 cursor-pointer hover:text-red-600 tab-link"
+        >Our Values</a
+      >
+    </nav>
+
+    <!-- Content + Image -->
+    <div
+      class="flex flex-wrap items-center justify-center max-w-6xl gap-24 mx-auto mt-10 mb-10"
+    >
+      <!-- Text Box -->
+      <div
+        id="content-box"
+        class="bg-white text-[#002a53] p-6 border-8 border-cyan-400 rounded-lg max-w-lg flex-1 min-w-[300px] text-sm leading-relaxed text-justify shadow-lg transition-transform duration-500"
+        style="transform-style: preserve-3d"
+      >
+        Primary School Hari Mushar Tol, Bathanaha, Sitamarhi, Bihar is a
+        government-recognized institution dedicated to providing quality
+        foundational education to young learners. As a state-organized primary
+        school, it serves as a pillar of inclusive learning, especially for
+        students from rural and underprivileged backgrounds. With a strong focus
+        on literacy, values, discipline, and overall development, the school
+        nurtures students in a safe and encouraging environment. Our dedicated
+        teachers work passionately to ensure that each child receives equal
+        opportunities to grow academically, socially, and emotionally. We aim
+        not only to educate but to empower — building a future where every child
+        is equipped with the knowledge, confidence, and compassion needed to
+        succeed.
+      </div>
+
+      <!-- Image -->
+      <div
+        id="content-image"
+        class="flex flex-col max-w-sm flex-1 min-w-[250px] justify-center items-center shadow-lg rounded-lg overflow-hidden transition-transform duration-500"
+        style="transform-style: preserve-3d"
+      >
+        <img
+          src="{% static 'images/mission_vision_values.png' %}"
+          alt="Mission Vision Values"
+          class="h-auto max-w-full"
+          draggable="false"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Our Department Section -->
+<section class="relative py-16 overflow-hidden bg-white">
+  <!-- Decorative Dots Rotating -->
+  <svg
+    class="absolute w-48 text-teal-500 pointer-events-none select-none -top-4 -left-6 opacity-60 animate-spin-slow"
+    viewBox="0 0 200 200"
+    fill="currentColor"
+  >
+    <defs>
+      <pattern
+        id="dots"
+        x="0"
+        y="0"
+        width="10"
+        height="10"
+        patternUnits="userSpaceOnUse"
+      >
+        <circle cx="2" cy="2" r="2"></circle>
+      </pattern>
+    </defs>
+    <rect width="200" height="200" fill="url(#dots)"></rect>
+  </svg>
+  <!-- Decorative Dots Rotating -->
+  <svg
+    class="absolute w-48 text-teal-500 pointer-events-none select-none -top-4 -right-0 opacity-60 animate-spin-slow"
+    viewBox="0 0 200 200"
+    fill="currentColor"
+  >
+    <defs>
+      <pattern
+        id="dots"
+        x="0"
+        y="0"
+        width="10"
+        height="10"
+        patternUnits="userSpaceOnUse"
+      >
+        <circle cx="2" cy="2" r="2"></circle>
+      </pattern>
+    </defs>
+    <rect width="200" height="200" fill="url(#dots)"></rect>
+  </svg>
+
+  <!-- Section Container -->
+  <div class="px-4 pt-10 mx-auto text-justify max-w-7xl">
+    <div class="mb-8 text-center">
+      <h2 class="text-4xl font-black leading-tight md:text-5xl">
+        Our <span class="text-rose-600">Department</span>
+      </h2>
+    </div>
+
+    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Card 1 -->
+      <div class="relative transition-all duration-500 group">
+        <figure class="overflow-hidden h-60 rounded-t-2xl">
+          <img
+            src="{% static 'images/class1.jpg' %}"
+            alt="Science"
+            class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+          />
+        </figure>
+        <div
+          class="relative z-10 p-6 text-white bg-[#002a53] rounded-b-2xl -mt-4 group-hover:-translate-y-8 transition-transform duration-500 shadow-xl min-h-[320px] flex flex-col justify-start"
+        >
+          <h3 class="mb-3 text-2xl font-semibold">CLASS-I</h3>
+          <p class="text-lg leading-relaxed">
+            Class I lays the foundation for scientific curiosity by introducing
+            young learners to basic concepts of nature and the world around them
+            through interactive and fun experiments.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="relative transition-all duration-500 group">
+        <figure class="overflow-hidden h-60 rounded-t-2xl">
+          <img
+            src="{% static 'images/class2.jpg' %}"
+            alt="Arts"
+            class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+          />
+        </figure>
+        <div
+          class="relative z-10 p-6 text-white bg-[#002a53] rounded-b-2xl -mt-4 group-hover:-translate-y-8 transition-transform duration-500 shadow-xl min-h-[320px] flex flex-col justify-start"
+        >
+          <h3 class="mb-3 text-2xl font-semibold">CLASS-II</h3>
+          <p class="text-lg leading-relaxed">
+            Class II nurtures creativity and imagination through exposure to
+            various forms of arts, including storytelling, painting, music, and
+            drama to develop expressive skills.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="relative transition-all duration-500 group">
+        <figure class="overflow-hidden h-60 rounded-t-2xl">
+          <img
+            src="{% static 'images/class3.jpg' %}"
+            alt="Commerce"
+            class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+          />
+        </figure>
+        <div
+          class="relative z-10 p-6 text-white bg-[#002a53] rounded-b-2xl -mt-4 group-hover:-translate-y-8 transition-transform duration-500 shadow-xl min-h-[320px] flex flex-col justify-start"
+        >
+          <h3 class="mb-3 text-2xl font-semibold">CLASS-III</h3>
+          <p class="text-lg leading-relaxed">
+            Class III introduces the basics of commerce and trade, teaching
+            students the importance of money, markets, and simple economic
+            activities through age-appropriate lessons.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="relative transition-all duration-500 group">
+        <figure class="overflow-hidden h-60 rounded-t-2xl">
+          <img
+            src="{% static 'images/class4.jpg' %}"
+            alt="Mathematics"
+            class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+          />
+        </figure>
+        <div
+          class="relative z-10 p-6 text-white bg-[#002a53] rounded-b-2xl -mt-4 group-hover:-translate-y-8 transition-transform duration-500 shadow-xl min-h-[320px] flex flex-col justify-start"
+        >
+          <h3 class="mb-3 text-2xl font-semibold">CLASS-IV</h3>
+          <p class="text-lg leading-relaxed">
+            Class IV focuses on strengthening mathematical skills by exploring
+            numbers, shapes, and patterns, encouraging logical thinking and
+            problem-solving abilities.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="relative transition-all duration-500 group">
+        <figure class="overflow-hidden h-60 rounded-t-2xl">
+          <img
+            src="{% static 'images/class5.jpg' %}"
+            alt="History"
+            class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+          />
+        </figure>
+        <div
+          class="relative z-10 p-6 text-white bg-[#002a53] rounded-b-2xl -mt-4 group-hover:-translate-y-8 transition-transform duration-500 shadow-xl min-h-[320px] flex flex-col justify-start"
+        >
+          <h3 class="mb-3 text-2xl font-semibold">CLASS-V</h3>
+          <p class="text-lg leading-relaxed">
+            Class V explores historical events and stories, helping students
+            understand their heritage, culture, and the importance of learning
+            from the past.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="relative transition-all duration-500 group">
+        <figure class="overflow-hidden h-60 rounded-t-2xl">
+          <img
+            src="{% static 'images/teacher.jpg' %}"
+            alt="Technology"
+            class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+          />
+        </figure>
+        <div
+          class="relative z-10 p-6 text-white bg-[#002a53] rounded-b-2xl -mt-4 group-hover:-translate-y-8 transition-transform duration-500 shadow-xl min-h-[320px] flex flex-col justify-start"
+        >
+          <h3 class="mb-3 text-2xl font-semibold">TEACHERS CURRICULUM</h3>
+          <p class="text-lg leading-relaxed">
+            Our Teachers' Curriculum incorporates modern educational techniques
+            and technology, designed to equip educators with innovative tools to
+            enhance classroom learning.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
