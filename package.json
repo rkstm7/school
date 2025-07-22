@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-      "dev:css": "npx tailwindcss -i school/static/src/styles.css -o school/static/dist/styles.css --watch",
-       "build:css": "npx tailwindcss -i school/static/src/styles.css -o school/static/dist/styles.css --minify"
+      "dev:css": "npx tailwindcss -i static/src/styles.css -o static/dist/styles.css --watch",
+       "build:css": "npx tailwindcss -i static/src/styles.css -o static/dist/styles.css --minify"
   },
   "repository": {
     "type": "git",

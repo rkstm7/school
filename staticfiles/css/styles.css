@@ -1,9 +1,84 @@
-  body,
-  html {
-    margin: 0;
-    padding: 0;
-  }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
+    body {
+      font-family: sans-serif;
+
+    }
+
+    .carousel-container {
+      width: 100%;
+      height: 40rem;
+      overflow: hidden;
+      margin-top: 0;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .carousel-track {
+      display: flex;
+      height: 100%;
+      transition: transform 1s ease-in-out;
+    }
+
+    .slide {
+      flex: 0 0 100%;
+      height: 100%;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* ensures full image fills without stretch */
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background: white;
+      border: none;
+      font-size: 24px;
+      color: #e60000;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .carousel-btn:hover {
+      background-color: #ffe5e5;
+    }
+
+    .carousel-btn.prev {
+      left: 15px;
+    }
+
+    .carousel-btn.next {
+      right: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .carousel-container {
+        height: 24rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .carousel-container {
+        height: 16rem;
+      }
+    }
+
+
+  
+
+  
 /* Headmaster Section */
 @keyframes fade-in-section {
   0% {

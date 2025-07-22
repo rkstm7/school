@@ -1,71 +1,42 @@
 {% extends "base.html" %} {% load static %} {% block title %}Home{% endblock %}
 {% block content %}
 
-<!-- Carousel Photo Effect Section - Full Width  -->
-<div class="relative w-full overflow-hidden h-[650px]">
-  <div
-    id="carousel"
-    class="flex w-full h-full transition-transform duration-700 ease-in-out"
-  >
-    <img
-      src="{% static 'images/banner1.jpg' %}"
-      class="flex-shrink-0 object-cover w-full h-[650px]"
-    />
-    <img
-      src="{% static 'images/banner2.jpg' %}"
-      class="flex-shrink-0 object-cover w-full h-[650px]"
-    />
-    <img
-      src="{% static 'images/banner3.jpg' %}"
-      class="flex-shrink-0 object-cover w-full h-[650px]"
-    />
+<!-- Carousel Section -->
+<div class="carousel-container">
+  <div class="carousel-track" id="carouselTrack">
+    <div class="slide">
+      <img src="static/images/banner1.jpg" alt="Banner 1" />
+    </div>
+    <div class="slide">
+      <img src="static/images/banner2.jpg" alt="Banner 2" />
+    </div>
+    <div class="slide">
+      <img src="static/images/banner3.jpg" alt="Banner 3" />
+    </div>
   </div>
-  <button
-    onclick="prevSlide()"
-    class="absolute p-2 -translate-y-1/2 bg-white rounded-full shadow-md top-1/2 left-4 hover:bg-gray-200"
-  >
-    &#10094;
-  </button>
-  <button
-    onclick="nextSlide()"
-    class="absolute p-2 -translate-y-1/2 bg-white rounded-full shadow-md top-1/2 right-4 hover:bg-gray-200"
-  >
-    &#10095;
-  </button>
+
+  <button class="carousel-btn prev" id="prevBtn">&#10094;</button>
+  <button class="carousel-btn next" id="nextBtn">&#10095;</button>
 </div>
 
 <!-- Headmaster Section -->
-<div class="px-4 mx-auto mt-10 max-w-7xl animate-fade-in-section">
-  <!-- Section Heading -->
-  <div
-    class="mb-8 transition-transform duration-700 text-start hover:scale-105"
-  >
-    <h2
-      class="text-4xl font-black leading-tight text-gray-800 md:text-4xl drop-shadow-md"
-    >
-      Headmaster <span class="text-rose-600">Info</span>
-    </h2>
-  </div>
-
+<div class="w-full px-6 mt-10 animate-fade-in-section">
   <!-- Flex Container -->
   <div
     id="principalSection"
-    class="flex flex-col items-center justify-center gap-10 p-10 bg-gradient-to-br from-gray-50 via-white to-gray-100 rounded-3xl md:flex-row transform-gpu transition-all duration-700 hover:scale-[1.01] hover:shadow-2xl"
+    class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-16 p-6 bg-gradient-to-br from-gray-50 via-white to-gray-100 rounded-3xl transition-transform duration-700 hover:scale-[1.01] hover:shadow-2xl"
   >
     <!-- Left: Headmaster Card -->
-    <div
-      class="w-full md:w-[600px] p-12 text-center flex flex-col justify-center transform-gpu transition-transform duration-700 hover:scale-105"
-    >
+    <div class="w-full text-center md:w-1/2 md:text-left">
       <img
         src="{% static 'images/sir.png' %}"
         alt="MR. VINOD KUMAR SINGH"
-        class="object-cover mx-auto transition-transform duration-700 rounded-md shadow-md pointer-events-none select-none w-60 h-80 hover:scale-110"
+        class="object-cover mx-auto transition-transform duration-700 rounded-md shadow-md w-60 h-80 md:mx-0 hover:scale-110"
         draggable="false"
         oncontextmenu="return false"
       />
-
       <p
-        class="mt-4 text-lg font-bold tracking-wide text-rose-700 drop-shadow-sm"
+        class="mt-6 text-lg font-bold tracking-wide text-rose-700 drop-shadow-sm"
       >
         MR. VINOD KUMAR SINGH
       </p>
@@ -77,32 +48,25 @@
 
     <!-- Right: Headmaster Message -->
     <div
-      class="w-full md:w-[600px] p-6 transform-gpu transition-transform duration-700 hover:scale-105"
+      class="w-full md:w-1/2 text-justify md:text-left max-h-[800px] overflow-y-auto scrollbar-thin scrollbar-thumb-rose-400 scrollbar-track-gray-100 font-serif text-gray-700 leading-relaxed tracking-wide p-4"
     >
-      <h3 class="text-2xl font-bold text-orange-600 text-start drop-shadow">
+      <h3 class="mb-4 text-2xl font-bold text-orange-600 drop-shadow">
         Headmaster Message
       </h3>
-      <p
-        class="mt-4 font-serif text-base leading-relaxed tracking-wide text-justify text-gray-700 max-h-[800px] overflow-y-auto scrollbar-thin scrollbar-thumb-rose-400 scrollbar-track-gray-100"
-      >
+      <p>
         "शिक्षा ही जीवन का मूल आधार है।" <br /><br />
-
         प्रिय अभिभावकों, छात्रों और शुभचिंतकों,<br /><br />
-
         मैं अत्यंत गर्व और हर्ष के साथ आप सभी का PRIMARY SCHOOL HARI MUSHAR TOL,
         BATHNAHA, SITAMARHI, BIHAR में स्वागत करता हूँ। हमारा विद्यालय न केवल
         शैक्षणिक उत्कृष्टता की दिशा में प्रयासरत है, बल्कि बच्चों के सर्वांगीण
         विकास हेतु एक सकारात्मक, सुरक्षित और प्रेरणादायक वातावरण प्रदान करने के
         लिए समर्पित है। <br /><br />
-
         हमारा उद्देश्य विद्यार्थियों को ज्ञान के साथ-साथ संस्कार, अनुशासन और
         नैतिक मूल्यों से युक्त करना है ताकि वे आने वाले समय में एक जिम्मेदार
         नागरिक बन सकें। शिक्षकगण पूरी निष्ठा और लगन से बच्चों की शिक्षा में
         योगदान दे रहे हैं।<br /><br />
-
         मैं सभी अभिभावकों से अनुरोध करता हूँ कि वे विद्यालय के साथ सहयोग बनाए
         रखें और बच्चों को शिक्षित और सशक्त बनाने के इस मिशन में भागीदार बनें।<br /><br />
-
         हमारा विश्वास है कि यदि विद्यालय, शिक्षक, अभिभावक और छात्र मिलकर कार्य
         करें, तो हम हर बच्चे के भविष्य को उज्जवल बना सकते हैं।<br /><br />
       </p>
@@ -111,67 +75,104 @@
 </div>
 
 <!-- Teachers Section -->
-<div class="px-6 pt-16 mx-auto max-w-7xl">
-  <div class="mb-10 text-start">
+<div class="px-4 mx-auto mt-10 max-w-7xl animate-fade-in-section">
+  <!-- Heading -->
+  <div
+    class="mb-8 text-center transition-transform duration-700 lg:text-left hover:scale-105"
+  >
     <h2
-      class="text-4xl font-black leading-tight text-gray-800 transition-transform duration-700 md:text-4xl drop-shadow-md hover:scale-105"
+      class="text-3xl font-black leading-tight text-gray-800 sm:text-3xl drop-shadow-md"
     >
       Meet Our <span class="text-rose-600">Dedicated Teachers</span>
     </h2>
-    <p class="max-w-xl mt-3 tracking-wide text-left text-gray-700">
-      Our passionate educators are committed to shaping the future...
+    <p
+      class="max-w-xl mx-auto mt-3 text-base tracking-wide text-gray-700 lg:mx-0"
+    >
+      Our passionate educators are committed to shaping the future of our
+      students with care, compassion, and excellence.
     </p>
   </div>
-  <div class="grid grid-cols-1 gap-10 md:grid-cols-2">
+  <!-- Grid of Teachers -->
+  <div class="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <!-- Teacher Card 1 -->
     <div
-      class="flex flex-col items-center p-8 text-center transition-transform duration-300 shadow-lg teacher-card rounded-3xl"
+      class="flex flex-col items-center p-8 text-center transition-transform duration-300 bg-white shadow-md rounded-3xl hover:scale-[1.02] hover:shadow-xl"
       onmousemove="handleTilt(event, this)"
       onmouseleave="resetTilt(this)"
     >
       <img
         src="{% static 'images/demo3.png' %}"
-        alt="Teacher 1"
-        class="object-cover mb-6 border-4 border-indigo-500 rounded-full shadow-lg w-44 h-44"
+        alt="SAJADA PRAVEEN"
+        class="object-cover w-40 h-40 mb-6 border-4 border-indigo-500 rounded-full shadow-md"
         draggable="false"
         oncontextmenu="return false;"
       />
-      <h3 class="text-2xl font-bold tracking-tight text-gray-900">
+      <h3 class="text-xl font-bold tracking-tight text-gray-900 sm:text-2xl">
         SAJADA PRAVEEN
       </h3>
-      <p class="mt-2 font-semibold tracking-wide text-indigo-600 uppercase">
+      <p
+        class="mt-2 text-sm font-semibold tracking-wide text-indigo-600 uppercase"
+      >
         Assistant Teacher
       </p>
     </div>
 
+    <!-- Teacher Card 2 -->
     <div
-      class="flex flex-col items-center p-8 text-center transition-transform duration-300 shadow-lg teacher-card rounded-3xl"
+      class="flex flex-col items-center p-8 text-center transition-transform duration-300 bg-white shadow-md rounded-3xl hover:scale-[1.02] hover:shadow-xl"
       onmousemove="handleTilt(event, this)"
       onmouseleave="resetTilt(this)"
     >
       <img
         src="{% static 'images/demo4.png' %}"
-        alt="Teacher 2"
-        class="object-cover mb-6 border-4 border-indigo-500 rounded-full shadow-lg w-44 h-44"
+        alt="KUMARI INDU"
+        class="object-cover w-40 h-40 mb-6 border-4 border-indigo-500 rounded-full shadow-md"
         draggable="false"
         oncontextmenu="return false;"
       />
-      <h3 class="text-2xl font-bold tracking-tight text-gray-900">
+      <h3 class="text-xl font-bold tracking-tight text-gray-900 sm:text-2xl">
         KUMARI INDU
       </h3>
-      <p class="mt-2 font-semibold tracking-wide text-indigo-600 uppercase">
+      <p
+        class="mt-2 text-sm font-semibold tracking-wide text-indigo-600 uppercase"
+      >
         Assistant Teacher
       </p>
     </div>
+
+    <!-- Teacher Card 3 -->
+    <div
+      class="flex flex-col items-center p-8 text-center transition-transform duration-300 bg-white shadow-md rounded-3xl hover:scale-[1.02] hover:shadow-xl"
+      onmousemove="handleTilt(event, this)"
+      onmouseleave="resetTilt(this)"
+    >
+      <img
+        src="{% static 'images/demo4.png' %}"
+        alt="KUMARI INDU"
+        class="object-cover w-40 h-40 mb-6 border-4 border-indigo-500 rounded-full shadow-md"
+        draggable="false"
+        oncontextmenu="return false;"
+      />
+      <h3 class="text-xl font-bold tracking-tight text-gray-900 sm:text-2xl">
+        Vinod Kumar Singh
+      </h3>
+      <p
+        class="mt-2 text-sm font-semibold tracking-wide text-indigo-600 uppercase"
+      >
+        Assistant Teacher
+      </p>
+    </div>
+    <!-- Add more cards as needed -->
   </div>
 </div>
 
-<hr class="mt-16 border-t-4 border-gray-300" />
-
 <!-- Heading -->
 <div class="px-4 pt-16 mx-auto max-w-7xl">
-  <div class="mb-8 text-start">
+  <div
+    class="mb-8 text-center transition-transform duration-700 lg:text-left hover:scale-105"
+  >
     <h2
-      class="text-4xl font-black leading-tight text-gray-800 transition-transform duration-700 md:text-4xl drop-shadow-md hover:scale-105"
+      class="text-3xl font-black leading-tight text-gray-800 sm:text-3xl drop-shadow-md"
     >
       Important Links <span class="text-rose-600">& Academic Updates</span>
     </h2>
@@ -383,7 +384,8 @@
   </div>
 </section>
 
-<div class="mt-16">
+<!-- School Introduction Section -->
+<div class="w-full mt-10">
   <div class="bg-[#002a53] min-h-screen p-10 font-sans text-white shadow-lg">
     <!-- Heading -->
     <h1
@@ -395,7 +397,7 @@
 
     <!-- Tabs -->
     <nav
-      class="flex justify-center mb-6 space-x-6 text-xl font-semibold select-none"
+      class="flex flex-wrap justify-center mb-6 space-x-6 text-xl font-semibold select-none"
       id="tabs"
     >
       <a
@@ -469,10 +471,10 @@
 </div>
 
 <!-- Our Department Section -->
-<section class="relative py-16 overflow-hidden bg-white">
-  <!-- Decorative Dots Rotating -->
+<section class="relative py-4 mt-4 mb-0 overflow-hidden bg-white">
+  <!-- Decorative Dots Rotating (Left) -->
   <svg
-    class="absolute w-48 text-teal-500 pointer-events-none select-none -top-4 -left-6 opacity-60 animate-spin-slow"
+    class="absolute z-0 hidden w-48 text-teal-500 pointer-events-none select-none md:block -top-4 -left-6 opacity-60 animate-spin-slow"
     viewBox="0 0 200 200"
     fill="currentColor"
   >
@@ -490,9 +492,10 @@
     </defs>
     <rect width="200" height="200" fill="url(#dots)"></rect>
   </svg>
-  <!-- Decorative Dots Rotating -->
+
+  <!-- Decorative Dots Rotating (Right) -->
   <svg
-    class="absolute w-48 text-teal-500 pointer-events-none select-none -top-4 -right-0 opacity-60 animate-spin-slow"
+    class="absolute z-0 hidden w-48 text-teal-500 pointer-events-none select-none md:block -top-4 -right-0 opacity-60 animate-spin-slow"
     viewBox="0 0 200 200"
     fill="currentColor"
   >
@@ -512,9 +515,13 @@
   </svg>
 
   <!-- Section Container -->
-  <div class="px-4 pt-10 mx-auto text-justify max-w-7xl">
-    <div class="mb-8 text-center">
-      <h2 class="text-4xl font-black leading-tight md:text-5xl">
+  <div class="relative z-10 px-4 pt-16 mx-auto max-w-7xl">
+    <div
+      class="mb-8 text-center transition-transform duration-700 lg:text-left hover:scale-105"
+    >
+      <h2
+        class="text-3xl font-black leading-tight text-gray-800 sm:text-3xl drop-shadow-md"
+      >
         Our <span class="text-rose-600">Department</span>
       </h2>
     </div>
@@ -648,4 +655,5 @@
     </div>
   </div>
 </section>
+
 {% endblock %}

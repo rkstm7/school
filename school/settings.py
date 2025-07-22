@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
+# Base directory
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Secret key
@@ -20,7 +21,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
 ]
 
-# Add Render hostname if available
+# Add Render external hostname if deployed
 RENDER_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_HOSTNAME)
@@ -33,12 +34,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Add your apps here
+    # Add your custom apps here
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # For static file serving
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Enables static file serving in production
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -52,7 +53,7 @@ ROOT_URLCONF = 'school.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [BASE_DIR / 'templates'],  # Custom templates directory
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -68,7 +69,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'school.wsgi.application'
 
 # Database configuration
-if os.environ.get('DJANGO_DEVELOPMENT') == 'True':
+if os.environ.get('DJANGO_DEVELOPMENT', 'True') == 'True':
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -80,7 +81,7 @@ else:
         'default': dj_database_url.config(
             default=os.environ.get('DATABASE_URL'),
             conn_max_age=600,
-            conn_health_checks=True
+            conn_health_checks=True,
         )
     }
 
@@ -98,17 +99,19 @@ TIME_ZONE = 'Asia/Kolkata'
 USE_I18N = True
 USE_TZ = True
 
-# Static and media files
+# Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = [BASE_DIR / 'static']  # For development
+STATIC_ROOT = BASE_DIR / 'staticfiles'    # For collectstatic (production)
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+# Media files (user uploads)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-# Security
+# Security settings
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
 
+# Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

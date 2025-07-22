@@ -1,157 +1,46 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {% load static %}
     <meta charset="UTF-8" />
     <title>{% block title %}My School{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'src/style.css' %}" />
-    <!-- Tailwind CSS -->
-    <link href="{% static 'dist/styles.css' %}" rel="stylesheet" />
-    <style>
-  /* 🎯 Common container for animated balls */
-  #animatedObjectsContainer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    perspective: 1000px;
-    pointer-events: none;
-    z-index: 0;
-    overflow: hidden;
-  }
 
-  .ball {
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, #f43f5e, #9f1239);
-    filter: drop-shadow(0 0 15px rgba(244, 63, 94, 0.6));
-    animation: float3d 6s ease-in-out infinite;
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-  }
+    <!-- ✅ Custom CSS (Your styles) -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 
-  /* 🎯 Unique placement for each ball */
-  .ball:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
-  .ball:nth-child(2) { top: 40%; left: 80%; animation-delay: 1s; }
-  .ball:nth-child(3) { top: 70%; left: 30%; animation-delay: 2s; }
-  .ball:nth-child(4) { top: 10%; left: 60%; animation-delay: 3s; }
-  .ball:nth-child(5) { top: 55%; left: 45%; animation-delay: 4s; }
-
-  /* 🌐 3D floating animation */
-  @keyframes float3d {
-    0% {
-      transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) scale(1);
-      opacity: 0.7;
-    }
-    50% {
-      transform: translate3d(30px, -20px, 60px) rotateX(180deg) rotateY(180deg) scale(1.2);
-      opacity: 1;
-    }
-    100% {
-      transform: translate3d(0, 0, 0) rotateX(360deg) rotateY(360deg) scale(1);
-      opacity: 0.7;
-    }
-  }
-</style>
-
+    <!-- ✅ Tailwind CSS (Built output from Tailwind CLI) -->
+    <link rel="stylesheet" href="{% static 'dist/styles.css' %}" />
   </head>
-  <body class="text-gray-800 bg-gray-50">
-    
-    <!-- 5 Animated Balls -->
-  <div id="animatedObjectsContainer">
-    <div class="ball"></div>
-    <div class="ball"></div>
-    <div class="ball"></div>
-    <div class="ball"></div>
-    <div class="ball"></div>
-  </div>
-    
+
+  <body>
+    <!-- ✅ Topbar and Header -->
     {% include "partials/topbar.html" %}
     {% include "partials/header.html" %}
-    
+
+    <!-- ✅ Navigation -->
     {% if request.user.is_staff %}
       {% include "partials/admin_nav.html" %}
     {% else %}
       {% include "partials/user_nav.html" %}
     {% endif %}
-    
-    <main class="container px-4 mx-auto">
+
+    <!-- ✅ Main Content -->
+    <main>
       {% block content %}
       <!-- Page specific content goes here -->
       {% endblock %}
     </main>
-    
+
+    <!-- ✅ Footer -->
     {% block footer %}
     <footer>
       {% include "partials/footer.html" %}
     </footer>
     {% endblock %}
-    
-        <!-- ✅ Right Side Social Icons -->
-    <div
-      class="fixed right-0 z-50 flex flex-col p-2 space-y-4 transform -translate-y-1/2 bg-white rounded-l-lg shadow-lg top-1/2 bg-opacity-80 backdrop-blur-md"
-      style="max-width: 48px;"
-      aria-label="Social media links"
-    >
-      <!-- Website -->
-      <a href="https://www.yourschoolwebsite.com" target="_blank" rel="noopener noreferrer"
-        class="p-2 transition-transform duration-300 transform rounded hover:scale-125 hover:drop-shadow-xl"
-        title="Website">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-700" fill="none"
-          viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-        </svg>
-      </a>
 
-      <!-- Facebook -->
-      <a href="https://facebook.com/YourPage" target="_blank" rel="noopener noreferrer"
-        class="p-2 transition-transform duration-300 transform rounded hover:scale-125 hover:drop-shadow-xl"
-        title="Facebook">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="#1877F2">
-          <path
-            d="M22.675 0h-21.35C.593 0 0 .593 0 1.326v21.348C0 23.406.593 24 1.325 24h11.497v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.795.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.31h3.59l-.467 3.622h-3.123V24h6.116C23.406 24 24 23.406 24 22.674V1.326C24 .593 23.406 0 22.675 0z" />
-        </svg>
-      </a>
-
-      <!-- Instagram -->
-      <a href="https://instagram.com/YourProfile" target="_blank" rel="noopener noreferrer"
-        class="p-2 transition-transform duration-300 transform rounded hover:scale-125 hover:drop-shadow-xl"
-        title="Instagram">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="#E1306C" viewBox="0 0 24 24">
-          <path
-            d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5a3.75 3.75 0 003.75-3.75v-8.5A3.75 3.75 0 0016.25 4h-8.5zm8.1 1.65a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z" />
-        </svg>
-      </a>
-
-      <!-- Gmail -->
-      <a href="mailto:your.email@example.com"
-        class="p-2 transition-transform duration-300 transform rounded hover:scale-125 hover:drop-shadow-xl"
-        title="Email">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="#D14836" viewBox="0 0 24 24">
-          <path
-            d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2l-8 5-8-5h16zm0 12H4v-9l8 5 8-5v9z" />
-        </svg>
-      </a>
-
-      <!-- Twitter -->
-      <a href="https://twitter.com/YourProfile" target="_blank" rel="noopener noreferrer"
-        class="p-2 transition-transform duration-300 transform rounded hover:scale-125 hover:drop-shadow-xl"
-        title="Twitter">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="#1DA1F2" viewBox="0 0 24 24">
-          <path
-            d="M23 3a10.9 10.9 0 01-3.14.86 4.48 4.48 0 001.96-2.48 9.14 9.14 0 01-2.9 1.1A4.52 4.52 0 0016.88 2c-2.5 0-4.51 2-4.51 4.5 0 .35.04.69.1 1.02A12.86 12.86 0 013 3.11a4.5 4.5 0 001.4 6.01 4.42 4.42 0 01-2.04-.56v.06c0 2.18 1.56 4 3.63 4.42a4.52 4.52 0 01-2.03.08c.57 1.77 2.23 3.05 4.2 3.09a9 9 0 01-5.6 1.92A9.17 9.17 0 011 19.54a12.72 12.72 0 006.92 2.03c8.3 0 12.85-6.87 12.85-12.83 0-.2 0-.39-.02-.58A9.1 9.1 0 0023 3z" />
-        </svg>
-      </a>
-    </div>
-    
-    
-    <script src="{% static 'src/script.js' %}"></script>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- ✅ Custom JavaScript -->
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <script src={%static "js/scripts.js"%}></script>
   </body>
 </html>
